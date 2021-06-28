@@ -1,0 +1,64 @@
+-- Project Option: University Database
+-- Purpose: SQL Data Definition - alter the tables of the university database
+--                                by adding constraints
+-- Author: Nathan Cottrell, SID: 006765987
+
+ALTER TABLE StaffWorkInfo
+	ADD CONSTRAINTS StaffWorkInfo_staff_number_FK FOREIGN KEY (staff_number)
+	REFERENCES Staff(staff_number)
+	ON DELETE SET NULL DEFERRABLE INITIALLY IMMEDIATE;
+
+ALTER TABLE StaffWorkInfo
+	ADD CONSTRAINTS StaffWorkInfo_deptID_FK FOREIGN KEY (deptID)
+	REFERENCES Department(deptID)
+	ON DELETE SET NULL DEFERRABLE INITIALLY IMMEDIATE;
+
+ALTER TABLE Course
+	ADD CONSTRAINTS Course_staff_number_FK FOREIGN KEY (staff_number)
+	REFERENCES StaffWorkInfo(staff_number)
+	ON DELETE SET NULL DEFERRABLE INITIALLY IMMEDIATE;
+
+ALTER TABLE Course
+	ADD CONSTRAINTS Course_deptID_FK FOREIGN KEY (deptID)
+	REFERENCES Department(deptID)
+	ON DELETE SET NULL DEFERRABLE INITIALLY IMMEDIATE;
+
+ALTER TABLE Department
+	ADD CONSTRAINTS Department_staff_number_FK FOREIGN KEY (staff_number)
+	REFERENCES Staff(staff_number)
+	ON DELETE SET NULL DEFERRABLE INITIALLY IMMEDIATE;
+
+ALTER TABLE Module
+	ADD CONSTRAINTS Module_staff_number_FK FOREIGN KEY (staff_number)
+	REFERENCES StaffWorkInfo(staff_number)
+	ON DELETE SET NULL DEFERRABLE INITIALLY IMMEDIATE;
+
+ALTER TABLE Student
+	ADD CONSTRAINTS Student_course_code_FK FOREIGN KEY (course_code)
+	REFERENCES Course(course_code)
+	ON DELETE SET NULL DEFERRABLE INITIALLY IMMEDIATE;
+
+ALTER TABLE NextKin
+	ADD CONSTRAINTS NextKin_matricNo_FK FOREIGN KEY (matricNo)
+	REFERENCES Student(matricNo)
+	ON DELETE SET NULL DEFERRABLE INITIALLY IMMEDIATE;
+
+ALTER TABLE Performance
+	ADD CONSTRAINTS Performance_matricNo_FK FOREIGN KEY (matricNo)
+	REFERENCES Student(matricNo)
+	ON DELETE SET NULL DEFERRABLE INITIALLY IMMEDIATE;
+
+ALTER TABLE Performance
+	ADD CONSTRAINTS Performance_module_code_FK FOREIGN KEY (module_code)
+	REFERENCES Module(module_code)
+	ON DELETE SET NULL DEFERRABLE INITIALLY IMMEDIATE;
+
+ALTER TABLE Teaching
+	ADD CONSTRAINTS Teaching_staff_number_FK FOREIGN KEY (staff_number)
+	REFERENCES StaffWorkInfo(staff_number)
+	ON DELETE SET NULL DEFERRABLE INITIALLY IMMEDIATE;
+
+ALTER TABLE Teaching
+	ADD CONSTRAINTS Teaching_module_code_FK FOREIGN KEY (module_code)
+	REFERENCES Module(module_code)
+	ON DELETE SET NULL DEFERRABLE INITIALLY IMMEDIATE;
