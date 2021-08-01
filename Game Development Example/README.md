@@ -20,6 +20,9 @@ D - move right
 Space - jump
 
 To fire your weapon, you have to click the "Fire" button on screen.
+To open the skills menu, simply click the button in the upper right of the screen (use either 'Escape' or click
+the button again to close the skills menu).
 
 The controls for the Android version are self-explanatory, simply tap on the screen whichever button you wish to
-have your character perform the desired action.
+have your character perform the desired action. The skills menu is the button in the upper right corner of
+the screen.
