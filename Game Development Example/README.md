@@ -15,9 +15,9 @@ The game was designed for an Android phone and the included .apk file has the fi
 three playable levels. The game can also be run from a PC, all the necessary files are in the .zip file. The
 controls for the PC version are as follows:
 
-A - move left
-D - move right
-Space - jump
+A - move left<br>
+D - move right<br>
+Space - jump<br>
 
 To fire your weapon, you have to click the "Fire" button on screen.
 To open the skills menu, simply click the button in the upper right of the screen (use either 'Escape' or click
